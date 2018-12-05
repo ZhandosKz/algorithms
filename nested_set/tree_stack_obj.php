@@ -32,8 +32,15 @@ $treeSource = [
         ])
     ]),
     new Item(10, [
-        new Item(11)
+        new Item(11, [
+            new Item(14, [
+                new Item(15, [
+                    new Item(16),
+                ]),
+            ]),
+        ]),
     ]),
+    new Item(20),
 ];
 
 
@@ -85,6 +92,10 @@ validateNode($treeSource[0]->children[0]->children[0]->children[0], 4, 4, 5, 4);
 validateNode($treeSource[0]->children[0]->children[0]->children[1], 5, 6, 7, 4);
 validateNode($treeSource[0]->children[1]->children[0], 8, 11, 12, 3);
 validateNode($treeSource[0]->children[1]->children[1], 9, 13, 14, 3);
-validateNode($treeSource[1], 10, 17, 20, 1);
-validateNode($treeSource[1]->children[0], 11, 18, 19, 2);
+validateNode($treeSource[1], 10, 17, 26, 1);
+validateNode($treeSource[1]->children[0], 11, 18, 25, 2);
+validateNode($treeSource[1]->children[0]->children[0], 14, 19, 24, 3);
+validateNode($treeSource[1]->children[0]->children[0]->children[0], 15, 20, 23, 4);
+validateNode($treeSource[1]->children[0]->children[0]->children[0]->children[0], 16, 21, 22, 5);
+validateNode($treeSource[2], 20, 27, 28, 1);
 
